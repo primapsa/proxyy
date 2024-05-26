@@ -27,7 +27,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/', proxy('https://api.themoviedb.org/3', {
+app.use('/', proxy('https://api.themoviedb.org/', {
     https: true,
     userResHeaderDecorator(headers, userReq, userRes, proxyReq, proxyRes) {
         const key = userReq.clientIp;
